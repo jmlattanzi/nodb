@@ -1,0 +1,29 @@
+.container {
+    width: 90%;
+    border: 1px solid black;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+.cards {
+    border: 1px solid black;
+    width: 70%;
+    overflow: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.deck {
+    width: 25%;
+    height: 600px;
+}
