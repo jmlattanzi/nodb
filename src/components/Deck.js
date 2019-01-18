@@ -1,44 +1,19 @@
 import React, { Component } from 'react'
 import styles from '../styles/Deck.module.scss'
+import DeckItem from './DeckItem'
 
+// this function used to handle rendering all the cards in our deck, but I changed it.
+// now it's pretty much just the container and really shouldn't be a class
+// in fact, this really has no purpose
 class Deck extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            deck: [],
-            input: '',
-        }
-    }
-
-    handleChange = (e) => {
-        this.setState({ input: e.target.value })
-    }
-
     render() {
         return (
             <div className={styles.deck}>
-                {this.props.deck.map((card) => {
-                    return (
-                        <div className={styles.deckItem} key={card.id}>
-                            <div className={styles.thumb}>img</div>
-                            <div className={styles.cardInfo}>
-                                <div className={styles.cardDetails}>
-                                    <h3>{card.name}</h3>
-                                </div>
-                                <div className={styles.controls}>
-                                    <button>edit</button>
-                                    <button
-                                        onClick={(id) =>
-                                            this.props.removeFromDeck(card.id)
-                                        }>
-                                        remove
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })}
+                <DeckItem
+                    deck={this.props.deck}
+                    removeFromDeck={this.props.removeFromDeck}
+                    editCard={this.props.editCard}
+                />
             </div>
         )
     }

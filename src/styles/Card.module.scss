@@ -1,6 +1,19 @@
 .card {
-    height: 250px;
+    height: 300px;
     width: 200px;
     border: 1px solid black;
     margin: 5px;
+    padding: 2px;
+}
+
+.thumb {
+    height: 120px;
+    width: 100px;
+}
+
+.info {
+    text-align: left;
+    border: 1px dotted black;
+    padding: 5px;
+    height: 130px;
 }
