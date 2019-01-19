@@ -6,7 +6,7 @@ class App extends Component {
     render() {
         return (
             <div className='App'>
-                <h1>deck builder</h1>
+                <h1>deckbuilder</h1>
                 <div>
                     <Container />
                 </div>

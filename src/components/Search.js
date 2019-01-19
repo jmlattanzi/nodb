@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from '../styles/Search.module.scss'
+import Button from './Button'
 
 // pretty simple, this class just handles the search controls and input
 class Search extends Component {
@@ -23,15 +24,15 @@ class Search extends Component {
                     className={styles.search}
                     type='text'
                     onChange={(e) => this.handleChange(e)}
-                    placeholder='search'
+                    placeholder='search for cards'
                 />
-                <button
+                <Button
                     className={styles.submit}
-                    onClick={(input) =>
+                    function={(input) =>
                         this.props.searchCards(this.state.input)
                     }>
                     search
-                </button>
+                </Button>
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/Card.module.scss'
+import Button from './Button'
 
 // pretty simple, just render the info passed by the container render function
 const card = (props) => {
@@ -18,7 +19,9 @@ const card = (props) => {
                 alt='url broken'
             />
             <div className={styles.info}>
-                <strong>{props.name}</strong>
+                <div className={styles.name}>
+                    <strong>{props.name}</strong>
+                </div>
                 <div>
                     <strong>Mana:</strong> <em>{props.mana}</em>
                 </div>
@@ -33,9 +36,9 @@ const card = (props) => {
                     <em>{props.type}</em>
                 </div>
             </div>
-            <button onClick={(id) => props.addToDeck(props.id)}>
+            <Button function={(id) => props.addToDeck(props.id)}>
                 add to deck
-            </button>
+            </Button>
         </div>
     )
 }

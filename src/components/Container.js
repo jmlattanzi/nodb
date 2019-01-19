@@ -1,3 +1,4 @@
+// imports
 import React, { Component } from 'react'
 import axios from 'axios'
 import Card from './Card'
@@ -16,6 +17,8 @@ class Container extends Component {
             inDeck: [], // this holds all the cards in your deck
             defaultImage: cardback, // some cards don't have an image, heres the fallback
             searchResults: [], // store search results
+            // you cant add to the deck from the search results, addToDeck relies on this.state.cards
+            containerStyle: styles.container,
         }
     }
 
@@ -115,6 +118,10 @@ class Container extends Component {
         } else {
             window.alert('Search cant be empty') // tell the user they can't get away with anything
         }
+
+        if (input === 'elian') {
+            this.setState({containerStyle: styles.elianContainer})
+        }
     }
 
     // the big mess
@@ -126,7 +133,7 @@ class Container extends Component {
                     handleChange={this.handleChange}
                     searchCards={this.handleSearch}
                 />
-                <div className={styles.container}>
+                <div className={this.state.containerStyle}>
                     {this.state.searchResults.length === 0 ? (
                         <div className={styles.cards}>
                             {this.state.cards.length !== 0 ? (

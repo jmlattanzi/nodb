@@ -99,6 +99,36 @@ app.get('/api/cards/search', (req, res) => {
     res.json(searchResults)
 })
 
+// get all the cards of a specific color
+app.get('/api/cards/color', (req, res) => {
+    let colors = []
+    filteredCards.forEach((card) => {
+        if (card.colors.includes(req.query.color)) {
+            colors.push({
+                id: id,
+                name: card.name,
+                cardID: card.cardID,
+                types: card.type,
+                mana: card.mana,
+                rarity: card.rarity,
+                text: card.text,
+                color: card.colors,
+                image: card.imageUrl,
+            })
+        }
+    })
+
+    res.json(colors)
+})
+
+app.get('/api/cards/:rarity', (req, res) => {
+    let rarirtyCards = filteredCards.filter((card) => {
+        return card.rarity === req.params.rarity
+    })
+
+    res.json(rarirtyCards)
+})
+
 // add a new card to the filtered array
 app.post('/api/cards', (req, res) => {
     filteredCards.push({
