@@ -5,10 +5,7 @@ import Button from './Button'
 // pretty simple, just render the info passed by the container render function
 const card = (props) => {
     return (
-        <div
-            className={
-                props.styleType === 'card' ? styles.card : styles.deckItem
-            }>
+        <div className={styles.card}>
             <img
                 className={styles.thumb}
                 src={
@@ -29,11 +26,15 @@ const card = (props) => {
                     <strong>Rarity:</strong> <em>{props.rarity}</em>
                 </div>
                 <div>
-                    <strong>Color:</strong>
+                    <strong>Color: </strong>
                     <em>{props.color}</em>
                 </div>
                 <div>
                     <em>{props.type}</em>
+                </div>
+                <hr />
+                <div>
+                    <em>{props.text}</em>
                 </div>
             </div>
             <Button function={(id) => props.addToDeck(props.id)}>

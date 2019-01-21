@@ -20,23 +20,33 @@
 
 .info {
     text-align: left;
-    border: 1px solid black;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     padding: 5px;
     height: 130px;
+    overflow: auto;
 }
 
 .name {
     text-align: center;
+    margin: 7px 0;
 }
 
 button {
     margin: 5px 3px;
-    border: 1px solid #b3b3cc;
+    border: 1px solid #234;
     background-color: #fff;
     border-radius: 30px;
     cursor: pointer;
+    padding: 3px 10px;
 
     &:hover {
-        background-color: #b3b3cc;
+        background-color: #234;
+        color: white;
     }
+}
+
+hr {
+    color: rgba(0, 0, 0, 0.4);
+    width: 80%;
 }

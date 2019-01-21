@@ -85,7 +85,7 @@ class Container extends Component {
         console.log('card edited: ' + id) // sweet sweet console.log
         this.state.inDeck.forEach((card) => {
             if (card.id === id) {
-                // find a matching card and PUT a new name in it  then get the updated one back
+                // find a matching card and PUT a new name in it then send the updated one back
                 axios
                     .put(`/api/deck/${id}`, {
                         ...card,
@@ -97,7 +97,7 @@ class Container extends Component {
         })
     }
 
-    // search is fired when you hit the search button, duh
+    // this is fired when you hit the search button, duh
     handleSearch = (input) => {
         console.log(`search function called with: ${input}`) // tell me what the query is
         // make sure it's not blank
@@ -120,7 +120,7 @@ class Container extends Component {
         }
 
         if (input === 'elian') {
-            this.setState({containerStyle: styles.elianContainer})
+            this.setState({ containerStyle: styles.elianContainer })
         }
     }
 
@@ -146,7 +146,7 @@ class Container extends Component {
                                         rarity={card.rarity}
                                         color={card.colors}
                                         type={card.types}
-                                        styleType={'card'}
+                                        text={card.text}
                                         image={card.image}
                                         cardback={this.state.defaultImage}
                                         addToDeck={this.addToDeck}
@@ -168,7 +168,7 @@ class Container extends Component {
                                         rarity={card.rarity}
                                         color={card.colors}
                                         type={card.types}
-                                        styleType={'card'}
+                                        text={card.text}
                                         image={card.image}
                                         cardback={this.state.defaultImage}
                                         addToDeck={this.addToDeck}
